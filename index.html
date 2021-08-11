@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internshala Clone By Ankit Kumar</title>
+    <style>
+        body{
+            font-family: 'Inter var',sans-serif;
+            
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            height: 72px;
+        }
+        .right{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items:center;
+            gap: 1.8vw;
+
+        }
+        .right a{
+            text-decoration: none;
+            font-family: 'Inter var',sans-serif;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            height: 100%;
+            color: #484848;
+            font-weight: 400;
+            padding-top: 40px;
+            padding-bottom: 28px;
+        }
+        .right a:hover{
+            border-bottom-color: #008BDC ;
+        }
+        .right button{
+            
+           
+            box-shadow: 0 2px 4px rgba(0,0,0,.08) !important;
+            border-radius: 3px;
+            
+            padding: 7px 15px;
+            font-weight: 600;
+            min-width: 80px;
+            line-height: 1.14285714;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 9px;
+
+        }
+        .lbtn{
+            color: #008BDC;
+            border: 1px solid #008BDC;
+
+        }
+        .lbtn:hover{
+            border: 1px solid #006BC2;
+        }
+        .rbtn{
+            background-color: #008BDC;
+            border: 1px solid #008BDC;
+            color:white;
+        }
+        .rbtn:hover{
+            background-color: #006BC2;
+        }
+
+        .searchbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 25px;
+            width: 40vw;
+            margin: auto;
+            
+        }
+        .searchbar input{
+            height: 48px;
+            padding-left: 15px;
+            width: 38vw;
+            border-radius: 3px 0 0 3px !important;
+            border: 1px solid #DDD;
+            border-right: none !important;
+            font-weight: 400;
+            color: rgb(99, 92, 92);
+            font-size: 18px;
+            
+            border-right: none !important;
+        }
+        
+        .search{
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #008BDC;
+            cursor: pointer;
+           border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+            
+        }
+       
+        input:focus{
+            outline: none;
+            border-color: #008BDC;
+        }
+        input:hover{
+            border-color: #008BDC;
+        }
+
+        .search img{
+            width: 22px;
+            height: 22px;
+            filter: invert(100%);
+        }
+
+
+
+
+        .banner{
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            align-items: flex-start;
+            gap:12px;
+            height: 27vw;
+            width: 80%;
+            background: url(https://internshala.com/cached_uploads/banner-images/home/home_jobs-1920.png);
+            margin: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+
+        .primary{
+            font-size: 3.6vw;
+            font-weight: 700;
+            color: rgb(240, 233, 233);
+            margin-left: 35px;
+        }
+        .secondry{
+            font-size: 1.8vw;
+            font-weight: 600;
+            color: rgb(240, 233, 233);
+            margin-left: 35px;
+            margin-top: 5vw;
+        }
+        .second1{
+            font-size: 1.8vw;
+            font-weight: 600;
+            color: rgb(240, 233, 233);
+            margin-left: 35px;
+
+        }
+        .small{
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(240, 233, 233);
+            margin-left: 35px;
+            margin-top: 3.4vw;
+        }
+
+
+        h2{
+            font-size: 28px;
+            line-height: 1.28571429;
+            font-weight: 600;
+            margin-left: 67px;
+            margin-right: 67px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+
+        }
+
+        .apply{
+            margin-left: 67px;
+            margin-right: 67px;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+        .apply p{
+            font-size: 18px;
+            line-height: 1.22;
+            color: #484848;
+        }
+        .apply a{
+            font-weight: 600;
+        }
+        a{
+            text-decoration: none;
+            color: #008BDC;
+            cursor: pointer;
+        }
+
+        .container{
+            margin-top: 24px;
+            margin-bottom: 32px;
+            margin-left: 67px;
+            margin-right: 67px;
+        }
+        .head h4{
+            font-size: 18px;
+            line-height: 1.33333333;
+            font-weight: 600;
+        }
+
+
+        .items{
+            margin-top: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .inner{
+            display: flex;
+            padding: 16px 4px 24px;
+            flex-direction: column;
+           
+           
+            align-items: center;
+            border-radius: 6px;
+            margin: 10px 7px;
+            width: 140px;
+            height: 156px;
+            cursor: pointer;
+        }
+
+        .inner p{
+            font-weight: 500;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.38;
+            margin-top: 16px;
+            
+        }
+
+        .inner:hover p{
+            color: #008BDC;
+        }
+        .inner:hover{
+            box-shadow: 0 0 20px #ddd9d9;
+        }
+
+
+
+        .fresher{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .fresher h2{
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+        .new{
+            background: #FF8C00;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 18px;
+            font-family: Inter,sans-serif;
+            font-weight: 600;
+            padding: 4px 16px;
+            margin-left: 4px;
+            position: relative;
+            bottom: 4px;
+            margin-top: 7px;
+        }
+
+
+        .jobcontainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 24px;
+            margin-bottom: 32px;
+            margin-left: 67px;
+            margin-right: 67px;
+        }
+        .innernew{
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5vw;
+            margin-right: 5vw;
+
+        }
+
+        .innernew P{
+            font-size: 16px;
+            font-family: Inter,sans-serif;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-top: 8px;
+        }
+
+
+        .con{
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+
+
+        .more{
+            text-align: center;
+            margin-top: 24px;
+            color: #333;
+        }
+
+
+        .footinner{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            
+        }
+
+        .footlink{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            
+        }
+
+        .footlink h5{
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-top: 50px;
+            
+        }
+        .footlink a{
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            font-family: 'Inter var',sans-serif;
+        }
+
+        .footcontainer{
+            background-color: #333;
+            padding-left: 68px;
+            padding-right: 68px;
+            padding-bottom: 50px;
+            
+        }
+
+
+
+        hr{
+            border-top: 1px solid rgb(110, 109, 109);
+            margin-top: 30px;
+        }
+
+
+
+        .andriod{
+            display: inline-block;
+            color: #fff;
+            margin-right: 32px;
+            border: 1px solid #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .andriod span{
+            margin-bottom: 3px;
+        }
+        .andriod img{
+            width: 20px;
+            height: 20px;
+        }
+
+        .btfoot{
+            margin-top: 50px;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btfoot span{
+            color: white;
+        }
+
+        .twi img{
+            filter: invert(100%);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+
+        .you img{
+            filter: invert(100%);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+
+        .left{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo" style="cursor: pointer;">
+                <img src="https://internshala.com/static/images/common/new_internshala_logo.svg" alt="not found">
+
+            </div>
+        </div>
+        <div class="right">
+            <a href="#"> Internships</a>
+            <a href="#"> Online Trainings</a>
+            <a href="#"> Fresher Jobs</a>
+            <button class="lbtn">Login</button>
+            <button class="rbtn">Register</button>
+
+        </div>
+    </nav>
+
+                     <!-- searchbar -->
+
+    
+    <div class="searchbar">
+        <input type="text" placeholder="what are you looking for?">
+        <div class="search">
+            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png" alt="">
+        </div>
+    </div>
+
+
+
+                      <!-- banner here -->
+    
+                      
+    <div class="banner">
+        <div class="secondry">
+            Introducing
+        </div>
+        <div class="primary">
+            Freshers Jobs
+        </div>
+        <div class="second1">
+            Apply for Premium Freshers Job for free
+        </div>
+        <div class="small">
+            View jobs
+        </div>
+
+    </div>
+    
+    <h2>Internships</h2>
+    <div class="apply">
+        <p>Apply to 10,000+ internships for free</p>
+        <a href="#">View all internships</a>
+    </div>
+
+    <div class="container">
+        <div class="head">
+            <h4>Popular cities</h4>
+
+        </div>
+        <div class="items">
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/work_from_home.svg" alt="not found">
+                <P>Work From Home</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/delhi_ncr.svg" alt="not found">
+                <P>Delhi</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/bangalore.svg" alt="not found">
+                <P>Bangalouru</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/mumbai.svg" alt="not found">
+                <P>Mumbai</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/hyderabad.svg" alt="not found">
+                <P>Hydrabad</P>
+            </div>
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/chennai.svg" alt="not found">
+                <P>Chennai</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/kolkata.svg" alt="not found">
+                <P>Kolkata</P>
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-- new container is here -->
+
+
+    <div class="container">
+        <div class="head">
+            <h4>Popular categories</h4>
+
+        </div>
+        <div class="items">
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/part_time.svg" alt="not found">
+                <P>Part Time</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/engineering.svg" alt="not found">
+                <P>Engineering</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/ngo.svg" alt="not found">
+                <P>NGO</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/mba.svg" alt="not found">
+                <P>MBA</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/design.svg" alt="not found">
+                <P>Design</P>
+            </div>
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/science.svg" alt="not found">
+                <P>Science</P>
+            </div>
+
+            <div class="inner">
+                <img src="https://internshala.com/static/images/home/internships/categories/media.svg" alt="not found">
+                <P>Media</P>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="more">
+        & 52 more...
+    </div>
+
+    <div class="con"></div>
+    <div class="fresher">
+        <h2>Fresher Jobs </h2>
+        <div class="new">
+            New
+        </div>
+    </div>
+
+    
+    <div style="margin-top: 16px;" class="apply">
+        <p>Premium fresher jobs on your fingertips</p>
+        <a href="#">View all Jobs</a>
+    </div>
+  
+    <div class="jobcontainer">
+        <div class="innernew">
+            <img src="https://internshala.com/static/images/home/jobs/perks/ctc.svg" alt="not found">
+            <P>Minimum CTC of 3 LPA</P>
+
+        </div>
+        <div class="innernew">
+            <img src="https://internshala.com/static/images/home/jobs/perks/dream.svg"not found">
+            <P>Dream companies</P>
+
+        </div>
+        <div class="innernew">
+            <img src="https://internshala.com/static/images/home/jobs/perks/verified.svg" alt="not found">
+            <P>100% verified jobs</P>
+
+        </div>
+    </div>
+    </div>
+
+           <!-- footer is heree -->
+
+
+<div class="footcontainer">
+    <div class="footinner">
+        <div class="footlink">
+            <h5>Internships by places</h5>
+            <a href="#">Internships in India</a>
+            <a href="#">Internships in Delhi</a>
+            <a href="#">Internships in Mumbai</a>
+            <a href="#">Internships in Bangalouru</a>
+            <a href="#">Internships in Chennai</a>
+            <a href="#">Internships in Punne</a>
+            <a href="#">Internships in Gurgao</a>
+
+        </div>
+    
+        
+            <div class="footlink">
+                <h5>Internship by Stream</h5>
+                <a href="#">Computer Science Internship</a>
+                <a href="#">Electronic Internship</a>
+                <a href="#">Marketing Internship</a>
+                <a href="#">Finance Internship</a>
+                <a href="#">Civil Internship</a>
+                <a href="#">Management Internship</a>
+                <a href="#">Principal Internship</a>
+    
+            </div>
+          
+            
+                <div class="footlink">
+                    <h5>Internships by places</h5>
+                    <a href="#">Internships in India</a>
+                    <a href="#">Internships in Delhi</a>
+                    <a href="#">Internships in Mumbai</a>
+                    <a href="#">Internships in Bangalouru</a>
+                    <a href="#">Internships in Chennai</a>
+                    <a href="#">Internships in Punne</a>
+                    <a href="#">Internships in Gurgao</a>
+        
+                </div>
+            
+                
+                    <div class="footlink">
+                        <h5>Internship by Stream</h5>
+                        <a href="#">Computer Science Internship</a>
+                        <a href="#">Electronic Internship</a>
+                        <a href="#">Marketing Internship</a>
+                        <a href="#">Finance Internship</a>
+                        <a href="#">Civil Internship</a>
+                        <a href="#">Management Internship</a>
+                        <a href="#">Principal Internship</a>
+            
+                    </div>
+    </div>   
+    
+    
+    <hr>
+
+
+    <div class="btfoot">
+        <div class="left">
+            <div class="andriod">
+                <img src="data:image/jpeg;base64,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" alt="not found">
+                <span>Get Andriod App</span>
+            </div>
+            <div class="twi">
+                <img src="https://image.flaticon.com/icons/png/512/1384/1384017.png" alt="">
+            </div>
+            <div style="margin-left: 27px;" class="you">
+                <img src="https://image.flaticon.com/icons/png/512/1384/1384012.png" alt="">
+            </div>
+            
+
+        </div>
+        <div class="right">
+            <span>© Copyright 2021 Internshala</span>
+
+        </div>
+    </div>
+                
+    
+
+</div>           
+
+
+</body>
+</html>
